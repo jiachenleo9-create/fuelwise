@@ -1,50 +1,22 @@
-# Welcome to your Expo app 👋
+# Fuelwise 油耗管家
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+一个可直接用 Expo Go 打开的独立手机 App，用于记录加油、计算油耗和管理用车成本。
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 启动
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+然后使用手机上的 Expo Go 扫描终端二维码。手机和电脑需要处于同一网络。
 
-## Learn more
+## 当前功能
 
-To learn more about developing your project with Expo, look at the following resources:
+- 平均油耗、每公里成本、累计里程、累计油费看板
+- 加油记录：油品、油价、金额 / 升数自动换算、里程、是否加满
+- 停车、过路、洗车、保养维修、保险车船税等其他开销
+- 本月总览与历史记录搜索 / 筛选 / 删除
+- 数据通过 AsyncStorage 保存在手机本地，不依赖后端
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+主页面入口：`app/index.tsx`
