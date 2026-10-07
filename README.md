@@ -1,33 +1,33 @@
 # Fuelwise 油耗管家
 
 <p align="center">
-  <img src="assets/images/icon.png" width="120" alt="Fuelwise 图标">
+  <img src="assets/images/icon.png" width="110" alt="Fuelwise 图标">
 </p>
 
 <p align="center">
-  <strong>一款简洁好用的汽车油耗与用车成本管理 App</strong><br>
-  基于 Expo + React Native 开发，数据全部保存在手机本地，无需后端、无需注册。
+  <strong>一个记录加油、算油耗、管理用车成本的手机 App</strong><br>
+  数据存在手机本地，不需要注册，不联网也能用。
 </p>
 
 ---
 
-## 📱 应用预览
+## 这是什么
 
-<p align="center">
-  <img src="assets/images/screenshot-main.png" width="320" alt="Fuelwise 主界面预览">
-</p>
+**Fuelwise 油耗管家** 是一个帮你记账爱车花费的小工具。
 
-打开应用后，首页会直观展示：
-
-- **平均油耗**：自动根据加油记录和里程计算
-- **每公里成本**：帮助判断用车经济性
-- **累计里程**：记录爱车总行驶里程
-- **累计油费**：一目了然的总支出
-- **最近加油记录**：快速查看历史记录
+每次加油的时候记一笔，它就会自动帮你算出油耗和每公里花多少钱，还能记录停车费、过路费、洗车、保养、保险等其它用车开销。
 
 ---
 
-## ✨ 核心功能
+## 📱 界面预览
+
+<p align="center">
+  <img src="assets/images/screenshot-main.png" width="300" alt="Fuelwise 主界面">
+</p>
+
+---
+
+## 有啥用
 
 <p align="center">
   <img src="assets/images/feature-overview.png" width="100%" alt="Fuelwise 核心功能">
@@ -35,121 +35,74 @@
 
 | 功能 | 说明 |
 |------|------|
-| ⛽ 加油记录 | 记录油品（92#/95#/98# 等）、油价、金额，金额与升数自动换算 |
-| 📊 数据看板 | 实时展示平均油耗、每公里成本、累计里程、累计油费 |
-| 💰 用车成本 | 除了油费，还可记录停车、过路、洗车、保养维修、保险车船税等 |
-| 📅 月度总览 | 按月汇总油费、里程、其他支出，方便对比分析 |
-| 🔍 历史查询 | 支持搜索、筛选、删除任意记录 |
-| 💾 本地存储 | 所有数据通过 AsyncStorage 保存在手机本地，隐私安全 |
+| ⛽ 加油记录 | 记下油品、油价、金额和当时的里程 |
+| 📊 油耗看板 | 自动算出平均油耗、每公里成本、累计里程、累计油费 |
+| 💰 其它开销 | 停车、过路、洗车、保养维修、保险车船税都能记 |
+| 📅 月度总览 | 看看这个月油费花了多少、跑了多少公里 |
+| 🔍 历史记录 | 搜索、筛选、删除任意一条记录 |
 
 ---
 
-## 🛠 技术栈
+## 怎么下载
 
-- **[Expo](https://expo.dev/)** ~54：跨平台开发框架
-- **[React Native](https://reactnative.dev/)** 0.81：原生级移动端体验
-- **[expo-router](https://docs.expo.dev/router/introduction/)** ~6：文件系统路由
-- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** ~4：流畅动画
-- **[AsyncStorage](https://react-native-async-storage.github.io/async-storage/)**：本地持久化存储
-- **TypeScript**：类型安全的开发体验
+### 方法一：直接下载安装包（推荐）
 
----
+1. 打开 [**下载页面**](https://github.com/jiachenleo9-create/fuelwise/releases/latest)
+2. 在 **Assets** 里点击 `app-debug.apk` 下载
+3. 把文件传到安卓手机上，点击安装
 
-## 🚀 快速开始
+> 目前只提供 **安卓（Android）** 安装包。iPhone 需要苹果开发者签名，暂时用不了。
 
-### 环境要求
+### 方法二：用 Expo Go 在手机上跑（不用装 APK）
 
-- Node.js 18 或更高版本
-- npm 或 yarn
-- 手机安装 [Expo Go](https://expo.dev/go)（开发预览用）
-
-### 本地运行
+1. 手机上先装一个 [Expo Go](https://expo.dev/go)
+2. 在电脑上下载本项目，然后在项目目录里执行：
 
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/jiachenleo9-create/fuelwise.git
-cd fuelwise
-
-# 2. 安装依赖
 npm install
-
-# 3. 启动开发服务器
 npx expo start
 ```
 
-启动后，使用 Expo Go 扫描终端显示的二维码即可在手机上预览。手机和电脑需处于同一局域网。
+3. 用 Expo Go 扫描屏幕上出现的二维码
+
+这种方式手机和电脑要连同一个 Wi-Fi。
 
 ---
 
-## 📁 项目结构
+## 怎么用
 
-```
-fuelwise/
-├── app/                    # 页面路由（expo-router）
-│   ├── index.tsx           # 首页（数据看板 + 最近记录）
-│   └── _layout.tsx         # 根布局
-├── assets/images/          # 图标、启动图、预览图
-├── lib/                    # 工具函数与数据存储
-│   └── storage.ts          # AsyncStorage 封装
-├── app.json                # Expo 配置（应用名称、图标、包名等）
-├── eas.json                # EAS Build 构建配置
-├── package.json            # 项目依赖
-└── README.md               # 本文件
-```
+1. **第一次打开**：先去加油，加完后打开 App，点「记录」新增一条加油记录
+   - 填上油品（92# / 95# / 98#）、油价、加了多少钱或多少升
+   - 填上仪表盘上显示的**当前总里程**
+   - 如果是加满，记得勾选「加满」，油耗才算得准
+2. **看油耗**：记录两条以上「加满」的加油记录后，首页就会显示平均油耗和每公里成本
+3. **记其它花费**：停车、过路、洗车、保养等，同样在记录页添加，选对应的类型就行
+4. **查历史**：在历史页面可以搜索、按类型筛选，也可以删除记错的内容
+
+> 💡 小提示：油耗的计算依赖里程数，每次记录时**认真填当前总里程**，数字才准确。
 
 ---
 
-## 📦 构建安装包
+## 数据存在哪
 
-项目已配置 GitHub Actions，可自动构建 Android debug APK。
-
-### 在线构建（推荐）
-
-1. 打开仓库的 [Actions](https://github.com/jiachenleo9-create/fuelwise/actions) 页面
-2. 选择 **Build Android APK** 工作流
-3. 点击 **Run workflow** 手动触发
-4. 等待构建完成（约 5–15 分钟）
-5. 在 Artifacts 或 Release 中下载 `fuelwise-debug-apk`
-
-### 使用 EAS Build（正式包）
-
-如果你已有 Expo 账号，也可以使用 EAS 构建更正式的安装包：
-
-```bash
-npm install -g eas-cli
-eas build --platform android --profile preview
-```
-
-构建完成后，EAS 会提供下载链接，可直接发送到手机安装。
-
-> ⚠️ 当前自动生成的是 **debug APK**，可直接在 Android 手机上安装测试。如需发布到应用商店，需要配置签名证书并构建 release 版本。
+- 所有记录都保存在**你自己的手机里**，不会上传到网上，也不经过任何服务器
+- 卸载 App 或清除应用数据会让记录一起消失，重要数据请自己留个备份
 
 ---
 
-## 💾 数据与隐私
+## 常见问题
 
-- 所有数据均存储在手机本地，不会上传到任何服务器
-- 卸载应用或清除数据会导致记录丢失，建议定期导出重要数据
-- 未来可考虑增加数据导出/导入功能（CSV 或 JSON）
+**Q：安装时提示「未知来源应用」怎么办？**  
+A：安卓手机默认不允许安装非应用商店的软件，在弹窗里选择「允许安装」即可，安装完可以再关掉。
 
----
+**Q：换手机了记录能同步吗？**  
+A：目前不能，数据只存在本机。换手机前需要手动迁移或用旧手机继续用。
 
-## 📝 更新日志
-
-| 版本 | 说明 |
-|------|------|
-| 1.0.0 | 初始版本：加油记录、数据看板、用车成本、月度总览、历史查询 |
+**Q：为什么油耗显示不出来？**  
+A：需要**至少两条加满的加油记录**才能算出油耗，留意记录时勾选「加满」。
 
 ---
 
-## 🤝 贡献
+## 反馈
 
-欢迎提交 Issue 或 Pull Request！
-
-如果你有任何功能建议或 Bug 反馈，可以在 [Issues](https://github.com/jiachenleo9-create/fuelwise/issues) 页面提出。
-
----
-
-## 📄 许可证
-
-本项目仅供学习和个人使用。
+用着有问题或者想要新功能，可以在 [Issues](https://github.com/jiachenleo9-create/fuelwise/issues) 里留言。
